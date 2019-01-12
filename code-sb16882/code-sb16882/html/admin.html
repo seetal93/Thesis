@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>SRMT</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet" href="../css/application.css">
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+
+
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDyAQz4j-jfQbHrykbEOaNokj3ZA-Xr9UI",
+        authDomain: "memory-test-10e06.firebaseapp.com",
+        databaseURL: "https://memory-test-10e06.firebaseio.com",
+        projectId: "memory-test-10e06",
+        storageBucket: "",
+        messagingSenderId: "876445205065"
+      };
+      firebase.initializeApp(config);
+
+      const db = firebase.firestore();
+      db.settings({
+          timestampsInSnapshots: true
+      });
+    </script>
+
+</head>
+
+<body>
+    <div class="aligner" style="padding: 2em">
+        <h3 class="aligner-item" id="stats"> loading stats... </h3>
+    </div>
+
+    <div class="aligner">
+        <button id="download" class="btn btn-primary aligner-item" onclick='downloadTestData({ filename: "test-results.csv" });'></button>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+
+</html>

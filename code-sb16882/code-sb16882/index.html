@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Memory Tests</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <style>
+    .container {
+      display: block;
+      text-align: center;
+    }
+  </style>
+
+  <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDyAQz4j-jfQbHrykbEOaNokj3ZA-Xr9UI",
+      authDomain: "memory-test-10e06.firebaseapp.com",
+      databaseURL: "https://memory-test-10e06.firebaseio.com",
+      projectId: "memory-test-10e06",
+      storageBucket: "",
+      messagingSenderId: "876445205065"
+    };
+    firebase.initializeApp(config);
+
+    const db = firebase.firestore();
+    db.settings({
+        timestampsInSnapshots: true
+    });
+  </script>
+
+  <script src="js/app.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <section>
+      <h1> Memory Tests </h1>
+      <p> <br> These tests are interested in testing for different types of memory through matching cards.</br>
+        <br> I understand my data will be completely anonymous and I can't be identified from my answers </br>
+        <input type = "button"  value = "Yes" />    <input type = "button" value = "No" />
+        <br> The first test will require the participants to click on the cards in order to match the same ones. </br>
+        <br> The second test will require the same approach to match similar cards. </br>
+        <br> You will be doing each test four times, so that is eight in total.</br>
+        <br> The tests should take roughly 12 mins. </br>
+        <br> I understand I can stop taking part at any time </br>
+        <input type = "button"  value = "Yes" />    <input type = "button" value = "No" />
+      </p>
+
+      Age:
+      <form action="">
+        <input type="radio" name="age" value="18-39">18-39<br>
+        <input type="radio" name="age" value="40-59">40-59<br>
+        <input type="radio" name="age" value="60-">60-<br>
+      </form>
+    </section>
+    <p> Please click on the button below to start the test </p>
+    <p id="saveRandomNumber"></p>
+    <br />
+    <form>
+      <input type="button" value="Test #1" onclick="gotoTest1()" />
+    </form>
+  </div>
+</body>
+
+</html>
